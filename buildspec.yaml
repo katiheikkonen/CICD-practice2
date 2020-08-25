@@ -2,15 +2,8 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      python: 3.8
     commands:
       - echo "Installing"
-      - yum update -y
-      - yum install -y httpd.x86_64
-      - systemctl start httpd.service
-      - systemctl enable httpd.service
-      - echo "Hello World from $(hostname -f)" > /var/www/html/index.html
   pre_build:
     commands:
       - echo "Prebuilding"

@@ -2,4 +2,13 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2-user/website
+    destination: /home/ec2-user/python_demo
+hooks:
+  ApplicationStart:
+    - location: scripts/run_httpd.sh
+      timeout: 300
+      runas: root
+  ApplicationStop:
+    - location: scripts/stop_httpd.sh
+      timeout: 300
+      runas: root
