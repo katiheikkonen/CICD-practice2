@@ -4,21 +4,17 @@ phases:
   install:
     commands:
       - echo "Installing"
-  pre_build:
-    commands:
-      - echo "Prebuilding"
-  build:
-    commands:
-      - echo "Building static website"
-      - #!/bin/bash
       - yum update -y
       - yum install -y httpd.x86_64
       - systemctl start httpd.service
       - systemctl enable httpd.service
       - echo "Hello World from $(hostname -f)" > /var/www/html/index.html
+  pre_build:
+    commands:
+      - echo "Prebuilding"
+  build:
+    commands:
+      - echo "Building"
   post_build:
     commands:
       - echo "Post-building"
-artifacts:
-  files:
-    - appspec.yaml
