@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2-user/python_demo
+    destination: /home/ec2-user/static_website
 hooks:
   ApplicationStart:
     - location: scripts/run_httpd.sh
