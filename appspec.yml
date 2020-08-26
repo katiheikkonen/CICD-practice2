@@ -4,6 +4,10 @@ files:
   - source: /
     destination: /home/ec2-user/static_website
 hooks:
+  BeforeInstall:
+    - location: scripts/install.sh
+      timeout: 300
+      runas: root
   ApplicationStart:
     - location: scripts/run_httpd.sh
       timeout: 300
